@@ -157,7 +157,7 @@
   - gTLD(generic TLD)
     - com, edu
 - セカンドレベルドメイン(SLD Second Level Domain)
-  - 日本では，co, ac. ne等．
+  - 日本では，co, ac, ne等．
   - gTLDには無い．
 - サイトが管理するドメイン
 
@@ -166,10 +166,10 @@
   - DNS(Domain Name System)サーバ
   - NISサーバ
 - 表による変換
-  - /etc/hosts/
-  - \WINDOWS\system32\drivers\etc\hosts
+  - `/etc/hosts`
+  - `\WINDOWS\system32\drivers\etc\hosts`
 - 変換方法の指定(UNIX)
-  - /etc/resolv.conf
+  - `/etc/resolv.conf`
 
 # DNSサーバ
 - 機能分散と負荷分散

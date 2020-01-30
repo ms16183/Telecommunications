@@ -24,8 +24,8 @@ def main():
 
         f.write("# 目次\n\n")
         for h in header:
-            link = "("+h.replace("# ", "#").replace("\n", "").replace("(", "").replace(")", "").replace(" ", "-").lower()+")\n"
-            link = link.translate(str.maketrans("", "", string.punctuation))
+            link = "("+h.replace("# ", "#").replace("\n", "").replace("(", "").replace(")", "").replace(" ", "-").replace(".", "").lower()+")\n"
+            #link = link.translate(str.maketrans("", "", string.punctuation))
             f.write("- ["+h.replace("# ", "").replace("\n", "")+"]"+link)
 
         f.write("\n")

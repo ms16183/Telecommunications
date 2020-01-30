@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import sys
+import string
 
 def main():
     if len(sys.argv) != 2:
@@ -23,7 +24,8 @@ def main():
 
         f.write("# 目次\n\n")
         for h in header:
-            f.write("- ["+h.replace("# ", "").replace("\n", "")+"]("+h.replace("# ", "#").replace("\n", "").replace("(", "%28").replace(")", "%29")+")\n")
+            link = "("+h.replace("# ", "#").replace("\n", "").replace("(", "").replace(")", "").replace(" ", "-").lower()+")\n"
+            f.write("- ["+h.replace("# ", "").replace("\n", "")+"]"+link)
 
         f.write("\n")
         f.write(data)

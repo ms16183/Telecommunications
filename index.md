@@ -53,7 +53,7 @@
    * [経路選択(Routing)](#経路選択routing)
    * [経路選択(ルーティング)アルゴリズム](#経路選択ルーティングアルゴリズム-1)
    * [データリンク層のアドレスの解決](#データリンク層のアドレスの解決)
-   * [NDP(Neighbor Dicovery Protocol)](#ndpneighbor-dicovery-protocol)
+   * [NDP(Neighbor Discovery Protocol)](#ndpneighbor-discovery-protocol)
    * [RS(Router Solicitation)メッセージ](#rsrouter-solicitationメッセージ)
    * [RA(Router Advertisement)メッセージ](#rarouter-advertisementメッセージ)
    * [ステートレスアドレス自動設定](#ステートレスアドレス自動設定)
@@ -72,6 +72,7 @@
    * [Wi-Fi(無線LAN)](#wi-fi無線lan)
    * [周波数帯域(2.4GHz帯)](#周波数帯域24ghz帯)
    * [周波数帯域(5GHz帯)](#周波数帯域5ghz帯)
+   * [Wi-Fi(無線LAN)の方式](#wi-fi無線lanの方式)
    * [IPv6のまとめ](#ipv6のまとめ)
       * [IPv6のフィールド分割によるアドレス構造](#ipv6のフィールド分割によるアドレス構造)
       * [ユニキャストのフィールド](#ユニキャストのフィールド)
@@ -616,7 +617,7 @@ A -> B --------       C -> E
   - NS(近隣要請)とNA(近隣通知)を使用する．
   - `$ ndp`というコマンドが`$ arp`と同様に使える．
 
-# NDP(Neighbor Dicovery Protocol)
+# NDP(Neighbor Discovery Protocol)
 - ICMPv6の一部である．
   - データリンク層・物理層に依存しない．
 - メッセージの種類
@@ -845,7 +846,7 @@ IPv6のIPを簡単に分割する．
                                128
 | 7 |1|     40      |    16     |             64                |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|fe |L|  Global ID  |    SLA    |            IFID               |
+|fc +L|  Global ID  |    SLA    |            IFID               |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 ```
@@ -906,7 +907,7 @@ IPv6のIPを簡単に分割する．
 |名称|アドレス範囲|
 |:---|---:|
 |ループバック|`::1/128`|
-|ユニークローカルキャストアドレス|`fd00::/7`(L=1, fd+1=fe)|
+|ユニークローカルキャストアドレス|`fd00::/7`(L=1, fc+1=fd)|
 |リンクローカルキャストアドレス|`fe80::/10`|
 |グローバルユニキャストアドレス|その他|
 |マルチキャストアドレス|`fe00::/8`|
